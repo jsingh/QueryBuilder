@@ -1,0 +1,153 @@
+﻿/****** Object:  Table [dbo].[COUNTRY] ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[COUNTRY](
+	[CountryID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[CountryCode] [varchar](5) NOT NULL,
+	[CountryName] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED 
+(
+	[CountryID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING ON
+GO
+
+/****** Object:  Table [dbo].[STATE] ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[STATE](
+	[StateID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[Abbr] [char](2) NOT NULL,
+	[Name] [varchar](50) NOT NULL
+ CONSTRAINT [PK_STATE] PRIMARY KEY CLUSTERED 
+(
+	[StateID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING ON
+GO
+
+
+/****** Object:  Table [dbo].[AddressType] ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[AddressType](
+	[AddressTypeID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[EntityID] [int] NOT NULL,
+	[Enabled] [bit] NOT NULL,
+	[AddressTypeName] [varchar](20) NOT NULL,
+ CONSTRAINT [PK_AddressType] PRIMARY KEY CLUSTERED 
+(
+	[AddressTypeID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING ON
+GO
+
+ALTER TABLE [dbo].[AddressType] ADD  CONSTRAINT [DF_AddressType_Enabled]  DEFAULT (1) FOR [Enabled]
+GO
+
+/****** Object:  Table [dbo].[Address] ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Address](
+	[AddressID] [int] IDENTITY(1,1) NOT FOR REPLICATION NOT NULL,
+	[EntityID] [int] NOT NULL,
+	[AddressTypeID] [int] NOT NULL,
+	[Address1] [varchar](40) NOT NULL,
+	[Address2] [varchar](40) NULL,
+	[Address3] [varchar](40) NULL,
+	[City] [varchar](30) NOT NULL,
+	[StProvince] [varchar](125) NULL,
+	[State] [int] NULL,
+	[PostalCode] [varchar](10) NULL,
+	[Country] [int] NOT NULL,
+	[County] [varchar](50) NULL,
+	[Listed] [bit] NOT NULL,
+	[IsPreferred] [bit] NOT NULL,
+	[CreatedDate] [datetime] NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[LastUpdatedDate] [datetime] NULL,
+	[LastUpdatedBy] [int] NULL,
+ CONSTRAINT [PK_Address] PRIMARY KEY NONCLUSTERED 
+(
+	[AddressID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING ON
+GO
+
+ALTER TABLE [dbo].[Address] ADD  CONSTRAINT [DF_Address_CreatedDate]  DEFAULT (getdate()) FOR [CreatedDate]
+GO
+
+ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_Address_AddressType] FOREIGN KEY([AddressTypeID])
+REFERENCES [dbo].[AddressType] ([AddressTypeID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_Address_AddressType]
+GO
+
+ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_Address_Country] FOREIGN KEY([Country])
+REFERENCES [dbo].[Country] ([CountryID])
+GO
+
+ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_Address_Country]
+GO
+
+ALTER TABLE [dbo].[Address]  WITH CHECK ADD  CONSTRAINT [FK_Address_State] FOREIGN KEY([State])
+REFERENCES [dbo].[State] ([StateID])
+GO
+
+ALTER TABLE [dbo].[Address] CHECK CONSTRAINT [FK_Address_State]
+GO
+
+
+ALTER TABLE [dbo].[Address] ADD  CONSTRAINT [DF_Address_LISTED]  DEFAULT ((1)) FOR [Listed]
+GO
+
+ALTER TABLE [dbo].[Address] ADD  CONSTRAINT [DF_Address_IsPreferred]  DEFAULT ((1)) FOR [IsPreferred]
+GO
+

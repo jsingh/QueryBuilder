@@ -1,0 +1,304 @@
+﻿/*Populate Country Database*/
+SET Identity_insert Country ON
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (1,	'AL',	'Albania')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (2,	'DZ',	'Algeria')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (3,	'AS',	'American Samoa')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (4,	'AD',	'Andorra')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (5,	'AO',	'Angola')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (6,	'AI',	'Anguilla')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (7,	'AQ',	'Antarctica')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (8,	'AG',	'Antigua and Barbuda')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (9,	'AR',	'Argentina')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (10,	'AM',	'Armenia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (11,	'AW',	'Aruba')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (12, 'AU',	'Australia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (13,	'AT',	'Austria')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (14,	'AZ',	'Azerbaijan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (15,	'BS',	'Bahama')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (16,	'BH',	'Bahrain')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (17,	'BD',	'Bangladesh')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (18,	'BB',	'Barbados')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (19,	'BY',	'Belarus')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (20, 'BE',	'Belgium')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (21,	'BZ',	'Belize')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (22,	'BJ',	'Benin')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (23,	'BM',	'Bermuda')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (24,	'BT',	'Bhutan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (25,	'BO',	'Bolivia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (26,	'BA',	'Bosnia and Herzegovina')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (27,	'BW',	'Botswana')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (28,	'BV',	'Bouvet Island')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (29,	'BR',	'Brazil')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (30,	'IO',	'British Indian Ocean Territory')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (31,	'BN',	'Brunei Darussalam')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (32,	'BG',	'Bulgaria')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (33,	'BF',	'Burkina Faso')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (34,	'BI',	'Burundi')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (35,	'KH',	'Cambodia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (36,	'CM',	'Cameroon')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (37,	'CA',	'Canada')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (38,	'CV',	'Cape verde')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (39,	'KY',	'Cayman Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (40,	'CF',	'Central African Republic')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (41,	'TD',	'Chad')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (42,	'CL',	'Chile')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (43,	'CN',	'China')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (44,	'CX',	'Christmas Island')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (45,	'CC',	'Cocos (Keeling) Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (46,	'CO',	'Colombia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (47,	'KM',	'Comoros')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (48,	'CG',	'Congo')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (49,	'CD',	'Congo, The Democratic Republic of the')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (50,	'CK',	'Cook Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (51,	'CR',	'Costa Rica')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (52,	'CI',	'Côte D''ivoire')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (53,	'HR',	'Croatia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (54,	'CU',	'Cuba')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (55,	'CY',	'Cyprus')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (56,	'CZ',	'Czech Republic')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (57,	'DK',	'Denmark')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (58,	'DJ',	'Djibouti')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (59,	'DM',	'Dominica')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (60,	'DO',	'Dominican Republic')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (61,	'EC',	'Ecuador')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (62,	'EG',	'Egypt')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (63,	'SV',	'El Salvador')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (64,	'GQ',	'Equatorial Guinea')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (65,	'ER',	'Eritrea')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (66,	'EE',	'Estonia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (67,	'ET',	'Ethiopia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (68,	'FK',	'Falkland Islands (Malvinas)')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (69,	'FO',	'Faroe Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (70,	'FJ',	'Fiji')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (71,	'FI',	'Finland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (72,	'FR',	'France')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (73,	'GF',	'French Guiana')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (74,	'PF',	'French Polynesia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (75,	'TF',	'French Southern Territories')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (76,	'GA',	'Gabon')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (77,	'GM',	'Gambia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (78,	'GE',	'Georgia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (79,	'DE',	'Germany')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (80,	'GH',	'Ghana')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (81,	'GI',	'Gibraltar')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (82,	'GR',	'Greece')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (83,	'GL',	'Greenland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (84,	'GD',	'Grenada')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (85,	'GP',	'Guadeloupe')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (86,	'GU',	'Guam')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (87,	'GT',	'Guatemala')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (88,	'GN',	'Guinea')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (89,	'GW',	'Guinea-Bissau')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (90,	'GY',	'Guyana')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (91,	'HT',	'Haiti')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (92,	'HM',	'Heard Island and Mcdonald Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (93,	'VA',	'Holy See (Vatican City State)')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (94,	'HN',	'Honduras')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (95,	'HK',	'Hong Kong')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (96,	'HU',	'Hungary')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (97,	'IS',	'Iceland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (98,	'IN',	'India')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (99,	'ID',	'Indonesia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (100,	'IR',	'Iran, Islamic Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (101,	'IQ',	'Iraq')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (102,	'IE',	'Ireland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (103,	'IL',	'Israel')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (104,	'IT',	'Italy')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (105,	'JM',	'Jamaica')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (106,	'JP',	'Japan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (107,	'JO',	'Jordan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (108,	'KZ',	'Kazakhstan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (109,	'KE',	'Kenya')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (110,	'KI',	'Kiribati')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (111,	'KP',	'Korea, Democratic People''s Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (112,	'KR',	'Korea, Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (113,	'KW',	'Kuwait')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (114,	'KG',	'Kyrgyzstan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (115,	'LA',	'Lao People''s Democratic Republic')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (116,	'LV',	'Latvia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (117,	'LB',	'Lebanon')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (118,	'LS',	'Lesotho')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (119,	'LR',	'Liberia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (120,	'LY',	'Libyan Arab Jamahiriya')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (121,	'LI',	'Liechtenstein')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (122,	'LT',	'Lithuania')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (123,	'LU',	'Luxembourg')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (124,	'MO',	'Macao')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (125,	'MK',	'Macedonia, The Former Yugoslav Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (126,	'MG',	'Madagascar')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (127,	'MW',	'Malawi')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (128,	'MY',	'Malaysia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (129,	'MV',	'Maldives')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (130,	'ML',	'Mali')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (131,	'MT',	'Malta')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (132,	'MH',	'Marshall islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (133,	'MQ',	'Martinique')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (134,	'MR',	'Mauritania')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (135,	'MU',	'Mauritius')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (136,	'YT',	'Mayotte')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (137,	'MX',	'Mexico')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (138,	'FM',	'Micronesia, Federated States of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (139,	'MD',	'Moldova, Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (140,	'MC',	'Monaco')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (141,	'MN',	'Mongolia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (142,	'MS',	'Montserrat')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (143,	'MA',	'Morocco')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (144,	'MZ',	'Mozambique')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (145,	'MM',	'Myanmar')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (146,	'NA',	'Namibia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (147,	'NR',	'Nauru')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (148,	'NP',	'Nepal')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (149,	'NL',	'Netherlands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (150,	'AN',	'Netherlands Antilles')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (151,	'NC',	'New Caledonia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (152,	'NZ',	'New Zealand')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (153,	'NI',	'Nicaragua')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (154,	'NE',	'Niger')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (155,	'NG',	'Nigeria')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (156,	'NU',	'Niue')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (157,	'NF',	'Norfolk Island')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (158,	'MP',	'Northern Mariana Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (159,	'NO',	'Norway')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (160,	'OM',	'Oman')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (161,	'PK',	'Pakistan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (162,	'PW',	'Palau')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (163,	'PS',	'Palestinian Territory, Occupied')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (164,	'PA',	'Panama')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (165,	'PG',	'Papua New Guinea')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (166,	'PY',	'Paraguay')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (167,	'PE',	'Peru')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (168,	'PH',	'Philippines')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (169,	'PN',	'Pitcairn')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (170,	'PL',	'Poland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (171,	'PT',	'Portugal')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (172,	'PR',	'Puerto Rico')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (173,	'QA',	'Qatar')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (174,	'RE',	'Réunion')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (175,	'RO',	'Romania')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (176,	'RU',	'Russian Federation')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (177,	'RW',	'Rwanda')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (178,	'SH',	'Saint Helena')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (179,	'KN',	'Saint Kitts and Nevis')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (180,	'LC',	'Saint Lucia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (181,	'PM',	'Saint Pierre and Miquelon')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (182,	'VC',	'Saint Vincent and the Grenadines')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (183,	'WS',	'Samoa')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (184,	'SM',	'San Marino')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (185,	'ST',	'Sao Tome and Principe')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (186,	'SA',	'Saudi Arabia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (187,	'SN',	'Senegal')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (188,	'CS',	'Serbia and Montenegro')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (189,	'SC',	'Seychelles')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (190,	'SL',	'Sierra Leone')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (191,	'SG',	'Singapore')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (192,	'SK',	'Slovakia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (193,	'SI',	'Slovenia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (194,	'SB',	'Solomon Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (195,	'SO',	'Somalia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (196,	'ZA',	'South Africa')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (197,	'GS',	'South Georgia and the South Sandwich Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (198,	'ES',	'Spain')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (199,	'LK',	'Sri Lanka')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (200,	'SD',	'Sudan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (201,	'SR',	'Suriname')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (202,	'SJ',	'Svalbard and Jan Mayen')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (203,	'SZ',	'Swaziland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (204,	'SE',	'Sweden')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (205,	'CH',	'Switzerland')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (206,	'SY',	'Syrian Arab Republic')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (207,	'TW',	'Taiwan, Province of China')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (208,	'TJ',	'Tajikistan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (209,	'TZ',	'Tanzania, United Republic of')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (210,	'TH',	'Thailand')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (211,	'TL',	'Timor-Leste')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (212,	'TG',	'Togo')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (213,	'TK',	'Tokelau')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (214,	'TO',	'Tonga')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (215,	'TT',	'Trinidad and Tobago')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (216,	'TN',	'Tunisia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (217,	'TR',	'Turkey')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (218,	'TM',	'Turkmenistan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (219,	'TC',	'Turks and Caicos Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (220,	'TV',	'Tuvalu')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (221,	'UG',	'Uganda')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (222,	'UA',	'Ukraine')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (223,	'AE',	'United Arab Emirates')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (224,	'GB',	'United Kingdom')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (225,	'US',	'United States')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (226,	'UM',	'United States Minor Outlying Islands')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (227,	'UY',	'Uruguay')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (228,	'UZ',	'Uzbekistan')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (229,	'VU',	'Vanuatu')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (230,	'VE',	'Venezuela')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (231,	'VN',	'Vietnam')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (232,	'VG',	'Virgin Islands, British')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (233,	'VI',	'Virgin Islands, U.S.')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (234,	'WF',	'Wallis and Futuna')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (235,	'EH',	'Western Sahara')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (236,	'YE',	'Yemen')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (237,	'ZM',	'Zambia')
+INSERT INTO [dbo].[COUNTRY] ([CountryID],[COUNTRYCODE],[COUNTRYNAME]) VALUES (238,	'ZW',	'Zimbabwe')
+SET Identity_insert Country OFF
+
+/*Data for State*/
+SET Identity_insert State ON
+INSERT INTO [dbo].[State] ([StateID], [Abbr], [Name]) VALUES
+(1, 'AL', 'Alabama'),
+(2, 'AK', 'Alaska'),
+(3, 'AZ', 'Arizona'),
+(4, 'AR', 'Arkansas'),
+(5, 'CA', 'California'),
+(6, 'CO', 'Colorado'),
+(7, 'CT', 'Connecticut'),
+(8, 'DE', 'Delaware'),
+(9, 'DC', 'District of Columbia'),
+(10, 'FL', 'Florida'),
+(11, 'GA', 'Georgia'),
+(12, 'HI', 'Hawaii'),
+(13, 'ID', 'Idaho'),
+(14, 'IL', 'Illinois'),
+(15, 'IN', 'Indiana'),
+(16, 'IA', 'Iowa'),
+(17, 'KS', 'Kansas'),
+(18, 'KY', 'Kentucky'),
+(19, 'LA', 'Louisiana'),
+(20, 'ME', 'Maine'),
+(21, 'MD', 'Maryland'),
+(22, 'MA', 'Massachusetts'),
+(23, 'MI', 'Michigan'),
+(24, 'MN', 'Minnesota'),
+(25, 'MS', 'Mississippi'),
+(26, 'MO', 'Missouri'),
+(27, 'MT', 'Montana'),
+(28, 'NE', 'Nebraska'),
+(29, 'NV', 'Nevada'),
+(30, 'NH', 'New Hampshire'),
+(31, 'NJ', 'New Jersey'),
+(32, 'NM', 'New Mexico'),
+(33, 'NY', 'New York'),
+(34, 'NC', 'North Carolina'),
+(35, 'ND', 'North Dakota'),
+(36, 'OH', 'Ohio'),
+(37, 'OK', 'Oklahoma'),
+(38, 'OR', 'Oregon'),
+(39, 'PA', 'Pennsylvania'),
+(40, 'RI', 'Rhode Island'),
+(41, 'SC', 'South Carolina'),
+(42, 'SD', 'South Dakota'),
+(43, 'TN', 'Tennessee'),
+(44, 'TX', 'Texas'),
+(45, 'UT', 'Utah'),
+(46, 'VT', 'Vermont'),
+(47, 'VA', 'Virginia'),
+(48, 'WA', 'Washington'),
+(49, 'WV', 'West Virginia'),
+(50, 'WI', 'Wisconsin'),
+(51, 'WY', 'Wyoming');
+SET Identity_insert State OFF
+
+set identity_insert AddressType ON
+INSERT INTO [dbo].[AddressType] ([AddressTypeID], [EntityID], [AddressTypeName], [Enabled]) VALUES
+(1,	1,	'Home',1),	
+(2,	1,	'Work',1);
+set identity_insert AddressType OFF
+
