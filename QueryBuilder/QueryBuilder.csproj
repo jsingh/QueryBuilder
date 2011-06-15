@@ -53,6 +53,7 @@
     <Compile Include="Address.cs" />
     <Compile Include="DbUtil.cs" />
     <Compile Include="DC\BaseDC.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Fixture\AddressBuilder.cs" />
     <Compile Include="Fixture\BaseFixture.cs" />
     <Compile Include="Fixture\EnterpriseLibraryValidator.cs" />
@@ -60,15 +61,22 @@
     <Compile Include="Fixture\IBuilder.cs" />
     <Compile Include="Fixture\ICollectionBuilder.cs" />
     <Compile Include="Fixture\MetaDataAttributeValidator.cs" />
+    <Compile Include="IdentityColumnAttribute.cs" />
     <Compile Include="NullUtil.cs" />
+    <Compile Include="PrimaryKeyAttribute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryBuilder.cs" />
+    <Compile Include="QueryBuilderCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="sql\pre-data.txt" />
+    <Content Include="sql\scripts.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

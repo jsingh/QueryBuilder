@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using QueryBuilder.Attributes;
+using QueryBuilder;
 
 namespace QueryBuilder {
     [Serializable]
     public partial class Address {
         #region Declarations
-        private int _id = 0;
+        private int _addressID = 0;
         private int _entityID = 0;
         private int _addressTypeID = 0;
         private string _address1 = null;
@@ -37,9 +39,11 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.AddressID
         /// </summary>
-        public int ID {
-            get { return _id; }
-            set { _id = value; }
+        [IdentityColumn]
+        [PrimaryKey]
+        public int AddressID {
+            get { return _addressID; }
+            set { _addressID = value; }
         }
 
         /// <summary>
@@ -284,6 +288,8 @@ namespace QueryBuilder {
         #endregion ObjectDataSource support
 
         protected bool GetDirtyFlag<T>(T field, T value) {
+            // If you are setting a property, we will assume that the dirty flag should be set
+            return true;
             bool flag = true;
 
             if (field == null && value == null) {
@@ -296,16 +302,32 @@ namespace QueryBuilder {
             return flag;
         }
 
-        protected bool GetDirtyFlag<T>(Nullable<T> field, Nullable<T> value) where T : struct {
-            bool flag = true;
-            if (field == null && value == null) {
-                flag = false;
-            } else if (field == null) {
-                flag = !value.Equals(field);
-            } else {
-                flag = !field.Equals(value);
-            }
-            return flag;
+        public static Address Fetch(int AddressID) {
+            return QueryBuilder.QueryBuilder<Address>.Init().Fetch(new Address { AddressID = AddressID });
         }
+
+        public void DoCreate() {
+            QueryBuilder.QueryBuilder<Address>.Init().Create(this);
+            //GetGroupDC().InsertGroup(this);
+            //this.SaveChildObjects();
+        }
+
+        public void DoUpdate() {
+            QueryBuilder.QueryBuilder<Address>.Init().Update(this);
+            //GetGroupDC().UpdateGroup(this);
+            //this.SaveChildObjects();
+        }
+
+        //protected bool GetDirtyFlag<T>(Nullable<T> field, Nullable<T> value) where T : struct {
+        //    bool flag = true;
+        //    if (field == null && value == null) {
+        //        flag = false;
+        //    } else if (field == null) {
+        //        flag = !value.Equals(field);
+        //    } else {
+        //        flag = !field.Equals(value);
+        //    }
+        //    return flag;
+        //}
     }
 }
