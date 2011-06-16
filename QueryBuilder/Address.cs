@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using QueryBuilder.Attributes;
 using QueryBuilder;
+using System.ComponentModel.DataAnnotations;
 
 namespace QueryBuilder {
     [Serializable]
@@ -49,6 +50,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.EntityID
         /// </summary>
+        [Required(ErrorMessage = "EntityID is required")]
         public int EntityID {
             get { return _entityID; }
             set {
@@ -61,6 +63,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.AddressTypeID
         /// </summary>
+        [Required(ErrorMessage = "AddressTypeID is required")]
         public int AddressTypeID {
             get { return _addressTypeID; }
             set {
@@ -73,6 +76,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.Address1
         /// </summary>
+        [Required(ErrorMessage = "Address1 is required")]
         public string Address1 {
             get { return _address1; }
             set {
@@ -109,6 +113,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.City
         /// </summary>
+        [Required(ErrorMessage = "City is required")]
         public string City {
             get { return _city; }
             set {
@@ -157,6 +162,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.Country
         /// </summary>
+        [Required(ErrorMessage = "Country is required")]
         public int Country {
             get { return _country; }
             set {
@@ -181,6 +187,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.Listed
         /// </summary>
+        [Required(ErrorMessage = "Listed is required")]
         public bool Listed {
             get { return _listed; }
             set {
@@ -193,6 +200,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.IsPreferred
         /// </summary>
+        [Required(ErrorMessage = "IsPreferred is required")]
         public bool IsPreferred {
             get { return _isPreferred; }
             set {
@@ -205,6 +213,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.CreatedDate
         /// </summary>
+        [Required(ErrorMessage = "CreatedDate is required")]
         public DateTime CreatedDate {
             get { return _createdDate; }
             set {
@@ -217,6 +226,7 @@ namespace QueryBuilder {
         /// <summary>
         /// Database Mapping: Address.CreatedBy
         /// </summary>
+        [Required(ErrorMessage = "CreatedBy is required")]
         public int CreatedBy {
             get { return _createdBy; }
             set {

@@ -7,9 +7,25 @@ using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 using System.Web;
+using System.Collections;
 
 namespace QueryBuilder.Fixture {
     public class BaseFixture<T> : IBuilder<T> {
+        public BaseFixture() {
+            RangeValueMax.Add(typeof(byte), Int32.MinValue);
+            RangeValueMax.Add(typeof(sbyte), sbyte.MinValue);
+            RangeValueMax.Add(typeof(Int16), Int16.MinValue);
+            RangeValueMax.Add(typeof(ushort), ushort.MinValue);
+            RangeValueMax.Add(typeof(Int32), Int32.MinValue);
+            RangeValueMax.Add(typeof(uint), uint.MinValue);
+            RangeValueMax.Add(typeof(Int64), Int64.MinValue);
+            RangeValueMax.Add(typeof(ulong), ulong.MinValue);
+            RangeValueMax.Add(typeof(float), float.MinValue);
+            RangeValueMax.Add(typeof(double), double.MinValue);
+            RangeValueMax.Add(typeof(decimal), decimal.MinValue);
+            RangeValueMax.Add(typeof(DateTime), DateTime.MinValue);
+            RangeValueMax.Add(typeof(bool), false);
+        }
         private Hashtable RangeValueMax = new Hashtable();
         public DataContextType DataContextType { get; set; }
         private List<int> Options = new List<int>();
@@ -119,21 +135,6 @@ namespace QueryBuilder.Fixture {
                         // For other datatypes, if they have Range as well as Required, then we just use the Range
                         ////////////////////////////Range Attr//////////////////////////
                         if (rangeAttr != null) {
-                            RangeValueMax = new Hashtable();
-                            RangeValueMax.Add(typeof(byte), Int32.MinValue);
-                            RangeValueMax.Add(typeof(sbyte), sbyte.MinValue);
-                            RangeValueMax.Add(typeof(Int16), Int16.MinValue);
-                            RangeValueMax.Add(typeof(ushort), ushort.MinValue);
-                            RangeValueMax.Add(typeof(Int32), Int32.MinValue);
-                            RangeValueMax.Add(typeof(uint), uint.MinValue);
-                            RangeValueMax.Add(typeof(Int64), Int64.MinValue);
-                            RangeValueMax.Add(typeof(ulong), ulong.MinValue);
-                            RangeValueMax.Add(typeof(float), float.MinValue);
-                            RangeValueMax.Add(typeof(double), double.MinValue);
-                            RangeValueMax.Add(typeof(decimal), decimal.MinValue);
-                            RangeValueMax.Add(typeof(DateTime), DateTime.MinValue);
-                            RangeValueMax.Add(typeof(bool), false);
-
                             object min = rangeAttr.Minimum;
                             object max = rangeAttr.Maximum;
                             if (rangeAttr.OperandType != typeof(int) && rangeAttr.OperandType != typeof(double)) {
@@ -173,12 +174,16 @@ namespace QueryBuilder.Fixture {
             T instance = Activator.CreateInstance<T>();
             this.Instance = instance;
             this.SetupData();
-            return instance;
+            return this.Instance;
         }
 
-        public virtual T Inject(InjectionType injectionType = InjectionType.CreateIfDoesntExist) {
-            T instance = Activator.CreateInstance<T>();
-            this.Instance = instance;
+        public virtual T Build(T overrideObject) {
+            Build();
+            Copy(overrideObject);
+            return this.Instance;
+        }
+
+        protected virtual T InjectT(InjectionType injectionType) {
             switch (injectionType) {
                 case InjectionType.Create:
                     // use reflection to call Create on the object
@@ -199,8 +204,73 @@ namespace QueryBuilder.Fixture {
                     break;
             }
 
-            this.Instance = instance;
-            return instance;
+            return this.Instance;
+        }
+
+        public virtual T Inject(InjectionType injectionType = InjectionType.CreateIfDoesntExist) {
+            //T instance = Activator.CreateInstance<T>();
+            //this.Instance = instance;
+            if (injectionType == InjectionType.Fetch) {
+                return First();
+            }
+            Build();
+            return InjectT(injectionType);
+        }
+
+        public virtual T Inject(T overrideObject, InjectionType injectionType = InjectionType.CreateIfDoesntExist) {
+            //T instance = Activator.CreateInstance<T>();
+            //this.Instance = instance;
+            if (injectionType == InjectionType.Fetch) {
+                return Fetch(overrideObject);
+            }
+            Build(overrideObject);
+            return InjectT(injectionType);
+        }
+
+        private void Copy(T copyFrom) {
+            // Query the Dirty Flags of copyFrom object and copy those to copyTo
+            FieldInfo dirtyFlag = copyFrom.GetType().GetField("DirtyFlags");
+            object dirtyFlagsObj = dirtyFlag.GetValue(copyFrom);
+            // all the possible dirty fields
+            List<string> possibleDirtyFields = new List<string>();
+            // fields that are actually dirty
+            List<string> dirtyFields = new List<string>();
+            GetDirtyFields(dirtyFlagsObj, out possibleDirtyFields, out dirtyFields);
+            // for each dirty flag, set the property on the copyTo object
+            foreach (string df in dirtyFields) {
+                PropertyInfo property = GetProperty(df);
+                property.SetValue(this.Instance, GetValue(df, copyFrom), null);
+            }
+        }
+
+        private object GetValue(string propertyName, T obj) {
+            PropertyInfo[] properties = obj.GetType().GetProperties();
+            PropertyInfo ppty = properties.Where(x => x.Name.Equals(propertyName)).FirstOrDefault();
+            if (ppty != null) {
+                return ppty.GetValue(obj, null);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Returns the dirty fields on the object
+        /// </summary>
+        /// <param name="dirtyFlagsObj"></param>
+        /// <param name="possibleDirtyFields">All the fields that can be dirty</param>
+        /// <param name="dirtyFields">Fields that are actually dirty</param>
+        private void GetDirtyFields(object dirtyFlagsObj, out List<string> possibleDirtyFields, out List<string> dirtyFields) {
+            possibleDirtyFields = new List<string>();
+            dirtyFields = new List<string>();
+            FieldInfo[] flags = dirtyFlagsObj.GetType().GetFields();
+            foreach (FieldInfo flag in flags) {
+                if (flag.FieldType.Name == "Boolean") {
+                    bool isDirty = (bool)flag.GetValue(dirtyFlagsObj);
+                    if (isDirty) {
+                        dirtyFields.Add(flag.Name);
+                    }
+                    possibleDirtyFields.Add(flag.Name);
+                }
+            }
         }
 
         private void Create() {
@@ -216,7 +286,7 @@ namespace QueryBuilder.Fixture {
                             new object[]{this.Instance});
             }
         }
-
+        
         private T First() {
             // QueryBuilder.QueryBuilder<Address>.Init().Fetch(new Address { City = "Irving", Country = 1 });
             Type ty = typeof(T);
@@ -230,6 +300,23 @@ namespace QueryBuilder.Fixture {
                              null,
                              returnInstance,
                              null));
+            }
+            return default(T);
+        }
+
+        private T Fetch(T qo) {
+            // QueryBuilder.QueryBuilder<Address>.Init().Fetch(new Address { City = "Irving", Country = 1 });
+            Type ty = typeof(T);
+            Type qb = typeof(QueryBuilder.QueryBuilder<>).MakeGenericType(typeof(T));
+            MethodInfo method = qb.GetMethod("Init", System.Reflection.BindingFlags.Static | BindingFlags.Public);
+            object returnInstance = (T)method.Invoke(null, null);
+            if (returnInstance != null) {
+                Type type = typeof(T);
+                return (T)(type.InvokeMember("Fetch",
+                             BindingFlags.Default | BindingFlags.InvokeMethod,
+                             null,
+                             returnInstance,
+                             new object[] { qo }));
             }
             return default(T);
         }
@@ -318,13 +405,23 @@ namespace QueryBuilder.Fixture {
             && targetType.GetGenericTypeDefinition().Equals(typeof(Nullable<>))) {
                 targetType = Nullable.GetUnderlyingType(targetType);
             }
+            FieldInfo field = targetType.GetField("MaxValue");
+            if (field != null) {
+                return field.GetValue(Activator.CreateInstance(targetType));
+            }
 
-            return targetType.GetField("MaxValue").GetValue(Activator.CreateInstance(targetType));
+            return RangeValueMax[targetType];
         }
 
         private object MinValueForType(Type targetType) {
             //return targetType.IsValueType ? Activator.CreateInstance(targetType) : null;
-            return targetType.GetField("MinValue").GetValue(Activator.CreateInstance(targetType));
+            FieldInfo field = targetType.GetField("MinValue");
+            if (field != null) {
+                return field.GetValue(Activator.CreateInstance(targetType));
+            }
+
+            return RangeValueMax[targetType];
+            // return targetType.GetField("MinValue").GetValue(Activator.CreateInstance(targetType));
         }
 
         private object GetOutOfRangeValue(Type targetType, RangeAttribute rangeAttr) {

@@ -25,7 +25,11 @@ namespace QueryBuilder.Fixture {
         /// <summary>
         /// Creates an entry
         /// </summary>
-        Create = 2
+        Create = 2,
+        /// <summary>
+        /// Fetch from database using a query object
+        /// </summary>
+        Fetch = 3
     }
 
     public enum Options {

@@ -29,11 +29,16 @@ namespace QueryBuilder {
             // Delete
 
             // Builder pattern
-            Address builderAddress = ((AddressBuilder)BaseFixture<Address>.Init().Builder()).Inject(InjectionType.Create);
+            //Address builderAddress = ((AddressBuilder)BaseFixture<Address>.Init().Builder()).Inject(InjectionType.Create);
+
+            //Address builderAddress = BaseFixture<Address>.Init().Inject(InjectionType.Create);
+            Address builderAddressWithOverride = BaseFixture<Address>.Init().Inject(new Address() { AddressTypeID = 1, Country = 1, City = "Irving" }, InjectionType.Create);
 
             //Address address = QueryBuilder.QueryBuilder<Address>.Init().Where(a => { a.City = "Irnving"; a.PostalCode = "76021"; }).Fetch();
             var addr = new Address1();
             var b = addr.SetBeforeFetch(a => { a.City = "Irving"; a.Postal = "76021"; });
+
+
         }
 
         class Address1 {

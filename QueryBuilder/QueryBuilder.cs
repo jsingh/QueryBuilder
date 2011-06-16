@@ -50,8 +50,6 @@ namespace QueryBuilder {
             List<string> dirtyFields = new List<string>();
             GetDirtyFields(dirtyFlagsObj, out possibleDirtyFields, out dirtyFields);
 
-            
-
             StringBuilder selectFieldsBuilder = new StringBuilder();
             foreach (string field in Columns) {
                 selectFieldsBuilder.Append(field).Append(",");
