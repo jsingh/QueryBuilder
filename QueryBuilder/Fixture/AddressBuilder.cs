@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using QueryBuilder;
+using QueryBuilder.ActiveRecord;
 
 namespace QueryBuilder.Fixture {
     public class AddressBuilder : BaseFixture<Address>, IBuilder<Address> {
@@ -19,5 +19,6 @@ namespace QueryBuilder.Fixture {
         public Address Build() {
             return new Address();
         }
+
     }
 }

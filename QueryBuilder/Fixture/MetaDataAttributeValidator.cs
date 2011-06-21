@@ -26,5 +26,16 @@ namespace QueryBuilder.Fixture {
             MetaDataAttributeValidator<T> obj = new MetaDataAttributeValidator<T>();
             return obj;
         }
+
+        protected override void Override(T copyFrom) {
+            // Query the Dirty Flags of copyFrom object and copy those to copyTo
+            FieldInfo dirtyFlag = copyFrom.GetType().GetField("ChangedProperties");
+            object dirtyFlagsObj = dirtyFlag.GetValue(copyFrom);
+            List<string> changedProperties = (List<string>)dirtyFlagsObj;
+            foreach (string ppty in changedProperties) {
+                PropertyInfo property = GetProperty(ppty);
+                property.SetValue(this.Instance, GetValue(ppty, copyFrom), null);
+            }
+        }
     }
 }

@@ -165,7 +165,7 @@ namespace QueryBuilder.Fixture {
         private void SetRangeConstraint() {
         }
 
-        private PropertyInfo GetProperty(string propertyName) {
+        protected PropertyInfo GetProperty(string propertyName) {
             PropertyInfo[] properties = this.Instance.GetType().GetProperties();
             return properties.Where(x => x.Name.Equals(propertyName)).FirstOrDefault();
         }
@@ -179,7 +179,7 @@ namespace QueryBuilder.Fixture {
 
         public virtual T Build(T overrideObject) {
             Build();
-            Copy(overrideObject);
+            Override(overrideObject);
             return this.Instance;
         }
 
@@ -227,7 +227,7 @@ namespace QueryBuilder.Fixture {
             return InjectT(injectionType);
         }
 
-        private void Copy(T copyFrom) {
+        protected virtual void Override(T copyFrom) {
             // Query the Dirty Flags of copyFrom object and copy those to copyTo
             FieldInfo dirtyFlag = copyFrom.GetType().GetField("DirtyFlags");
             object dirtyFlagsObj = dirtyFlag.GetValue(copyFrom);
@@ -243,7 +243,7 @@ namespace QueryBuilder.Fixture {
             }
         }
 
-        private object GetValue(string propertyName, T obj) {
+        protected object GetValue(string propertyName, T obj) {
             PropertyInfo[] properties = obj.GetType().GetProperties();
             PropertyInfo ppty = properties.Where(x => x.Name.Equals(propertyName)).FirstOrDefault();
             if (ppty != null) {
@@ -273,7 +273,7 @@ namespace QueryBuilder.Fixture {
             }
         }
 
-        private void Create() {
+        protected virtual void Create() {
             Type ty = typeof(T);
             Type qb = typeof(QueryBuilder.QueryBuilder<>).MakeGenericType(typeof(T));
             MethodInfo method = qb.GetMethod("Init", System.Reflection.BindingFlags.Static | BindingFlags.Public);
@@ -286,8 +286,8 @@ namespace QueryBuilder.Fixture {
                             new object[]{this.Instance});
             }
         }
-        
-        private T First() {
+
+        protected virtual T First() {
             // QueryBuilder.QueryBuilder<Address>.Init().Fetch(new Address { City = "Irving", Country = 1 });
             Type ty = typeof(T);
             Type qb = typeof(QueryBuilder.QueryBuilder<>).MakeGenericType(typeof(T));
@@ -304,7 +304,7 @@ namespace QueryBuilder.Fixture {
             return default(T);
         }
 
-        private T Fetch(T qo) {
+        protected virtual T Fetch(T qo) {
             // QueryBuilder.QueryBuilder<Address>.Init().Fetch(new Address { City = "Irving", Country = 1 });
             Type ty = typeof(T);
             Type qb = typeof(QueryBuilder.QueryBuilder<>).MakeGenericType(typeof(T));

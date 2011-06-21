@@ -39,6 +39,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 2\Assemblies\System.Web.Mvc.dll</HintPath>
@@ -51,17 +54,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs" />
+    <Compile Include="EF\Address.cs" />
+    <Compile Include="EF\Address.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Address.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DbUtil.cs" />
     <Compile Include="DC\BaseDC.cs" />
+    <Compile Include="EF\ContextFactory.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Fixture\AddressBuilder.cs" />
     <Compile Include="Fixture\BaseFixture.cs" />
+    <Compile Include="Fixture\EFFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Fixture\EnterpriseLibraryValidator.cs" />
     <Compile Include="Fixture\Enums.cs" />
     <Compile Include="Fixture\IBuilder.cs" />
     <Compile Include="Fixture\ICollectionBuilder.cs" />
     <Compile Include="Fixture\MetaDataAttributeValidator.cs" />
     <Compile Include="IdentityColumnAttribute.cs" />
+    <Compile Include="Inflector.cs" />
     <Compile Include="NullUtil.cs" />
     <Compile Include="PrimaryKeyAttribute.cs" />
     <Compile Include="Program.cs" />
@@ -70,6 +84,10 @@
     <Compile Include="QueryBuilderCache.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="EF\Address.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Address.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup />

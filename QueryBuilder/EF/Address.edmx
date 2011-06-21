@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="QBModelStoreContainer">
+          <EntitySet Name="Address" EntityType="QBModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AddressType" EntityType="QBModel.Store.AddressType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="COUNTRY" EntityType="QBModel.Store.COUNTRY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="STATE" EntityType="QBModel.Store.STATE" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Address_AddressType" Association="QBModel.Store.FK_Address_AddressType">
+            <End Role="AddressType" EntitySet="AddressType" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_Country" Association="QBModel.Store.FK_Address_Country">
+            <End Role="COUNTRY" EntitySet="COUNTRY" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_State" Association="QBModel.Store.FK_Address_State">
+            <End Role="STATE" EntitySet="STATE" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EntityID" Type="int" Nullable="false" />
+          <Property Name="AddressTypeID" Type="int" Nullable="false" />
+          <Property Name="Address1" Type="varchar" Nullable="false" MaxLength="40" />
+          <Property Name="Address2" Type="varchar" MaxLength="40" />
+          <Property Name="Address3" Type="varchar" MaxLength="40" />
+          <Property Name="City" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="StProvince" Type="varchar" MaxLength="125" />
+          <Property Name="State" Type="int" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Country" Type="int" Nullable="false" />
+          <Property Name="County" Type="varchar" MaxLength="50" />
+          <Property Name="Listed" Type="bit" Nullable="false" />
+          <Property Name="IsPreferred" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" />
+          <Property Name="LastUpdatedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EntityID" Type="int" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="AddressTypeName" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="COUNTRY">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CountryCode" Type="varchar" Nullable="false" MaxLength="5" />
+          <Property Name="CountryName" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Abbr" Type="char" Nullable="false" MaxLength="2" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Address_AddressType">
+          <End Role="AddressType" Type="QBModel.Store.AddressType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="QBModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_Country">
+          <End Role="COUNTRY" Type="QBModel.Store.COUNTRY" Multiplicity="1" />
+          <End Role="Address" Type="QBModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COUNTRY">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_State">
+          <End Role="STATE" Type="QBModel.Store.STATE" Multiplicity="0..1" />
+          <End Role="Address" Type="QBModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATE">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="State" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="QBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="QBModel.Address" />
+          <EntitySet Name="AddressTypes" EntityType="QBModel.AddressType" />
+          <EntitySet Name="COUNTRies" EntityType="QBModel.COUNTRY" />
+          <EntitySet Name="STATEs" EntityType="QBModel.STATE" />
+          <AssociationSet Name="FK_Address_AddressType" Association="QBModel.FK_Address_AddressType">
+            <End Role="AddressType" EntitySet="AddressTypes" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_Country" Association="QBModel.FK_Address_Country">
+            <End Role="COUNTRY" EntitySet="COUNTRies" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_State" Association="QBModel.FK_Address_State">
+            <End Role="STATE" EntitySet="STATEs" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityID" Type="Int32" Nullable="false" />
+          <Property Name="AddressTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Address1" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="Address3" Type="String" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="StProvince" Type="String" MaxLength="125" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="Int32" Nullable="false" />
+          <Property Name="County" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Listed" Type="Boolean" Nullable="false" />
+          <Property Name="IsPreferred" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" />
+          <Property Name="LastUpdatedBy" Type="Int32" />
+          <NavigationProperty Name="AddressType" Relationship="QBModel.FK_Address_AddressType" FromRole="Address" ToRole="AddressType" />
+          <NavigationProperty Name="COUNTRY1" Relationship="QBModel.FK_Address_Country" FromRole="Address" ToRole="COUNTRY" />
+          <NavigationProperty Name="STATE1" Relationship="QBModel.FK_Address_State" FromRole="Address" ToRole="STATE" />
+        </EntityType>
+        <EntityType Name="AddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntityID" Type="Int32" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="AddressTypeName" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Addresses" Relationship="QBModel.FK_Address_AddressType" FromRole="AddressType" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="COUNTRY">
+          <Key>
+            <PropertyRef Name="CountryID" />
+          </Key>
+          <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryCode" Type="String" Nullable="false" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Addresses" Relationship="QBModel.FK_Address_Country" FromRole="COUNTRY" ToRole="Address" />
+        </EntityType>
+        <EntityType Name="STATE">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Abbr" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Addresses" Relationship="QBModel.FK_Address_State" FromRole="STATE" ToRole="Address" />
+        </EntityType>
+        <Association Name="FK_Address_AddressType">
+          <End Role="AddressType" Type="QBModel.AddressType" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Address" Type="QBModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressType">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_Country">
+          <End Role="COUNTRY" Type="QBModel.COUNTRY" Multiplicity="1" />
+          <End Role="Address" Type="QBModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COUNTRY">
+              <PropertyRef Name="CountryID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_State">
+          <End Role="STATE" Type="QBModel.STATE" Multiplicity="0..1" />
+          <End Role="Address" Type="QBModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATE">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="State" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QBModelStoreContainer" CdmEntityContainer="QBEntities">
+          <EntitySetMapping Name="Addresses"><EntityTypeMapping TypeName="QBModel.Address"><MappingFragment StoreEntitySet="Address">
+            <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+            <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+            <ScalarProperty Name="Address1" ColumnName="Address1" />
+            <ScalarProperty Name="Address2" ColumnName="Address2" />
+            <ScalarProperty Name="Address3" ColumnName="Address3" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="StProvince" ColumnName="StProvince" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+            <ScalarProperty Name="Country" ColumnName="Country" />
+            <ScalarProperty Name="County" ColumnName="County" />
+            <ScalarProperty Name="Listed" ColumnName="Listed" />
+            <ScalarProperty Name="IsPreferred" ColumnName="IsPreferred" />
+            <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+            <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+            <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+            <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AddressTypes"><EntityTypeMapping TypeName="QBModel.AddressType"><MappingFragment StoreEntitySet="AddressType">
+            <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+            <ScalarProperty Name="EntityID" ColumnName="EntityID" />
+            <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+            <ScalarProperty Name="AddressTypeName" ColumnName="AddressTypeName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="COUNTRies"><EntityTypeMapping TypeName="QBModel.COUNTRY"><MappingFragment StoreEntitySet="COUNTRY">
+            <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+            <ScalarProperty Name="CountryCode" ColumnName="CountryCode" />
+            <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="STATEs"><EntityTypeMapping TypeName="QBModel.STATE"><MappingFragment StoreEntitySet="STATE">
+            <ScalarProperty Name="StateID" ColumnName="StateID" />
+            <ScalarProperty Name="Abbr" ColumnName="Abbr" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Address">
+        <EntityTypeShape EntityType="QBModel.Address" Width="1.5" PointX="3" PointY="2.375" Height="5.057109375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QBModel.AddressType" Width="1.5" PointX="0.75" PointY="3.875" Height="1.9802864583333339" IsExpanded="true" />
+        <EntityTypeShape EntityType="QBModel.COUNTRY" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7879850260416665" IsExpanded="true" />
+        <EntityTypeShape EntityType="QBModel.STATE" Width="1.5" PointX="0.75" PointY="7.25" Height="1.7879850260416657" IsExpanded="true" />
+        <AssociationConnector Association="QBModel.FK_Address_AddressType" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.8651432291666667" />
+          <ConnectorPoint PointX="3" PointY="4.8651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="QBModel.FK_Address_Country" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="1.5624995" />
+          <ConnectorPoint PointX="3.75" PointY="1.5624995" />
+          <ConnectorPoint PointX="3.75" PointY="2.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="QBModel.FK_Address_State" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.235047700520834" />
+          <ConnectorPoint PointX="3.75" PointY="8.235047700520834" />
+          <ConnectorPoint PointX="3.75" PointY="7.432109375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

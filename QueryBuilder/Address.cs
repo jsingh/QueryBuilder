@@ -6,7 +6,7 @@ using QueryBuilder.Attributes;
 using QueryBuilder;
 using System.ComponentModel.DataAnnotations;
 
-namespace QueryBuilder {
+namespace QueryBuilder.ActiveRecord {
     [Serializable]
     public partial class Address {
         #region Declarations
